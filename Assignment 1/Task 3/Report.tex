@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{esint}
+\usepackage{ fancyhdr }
+\usepackage{ enumitem }
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[linesnumbered , ruled , vlined]{algorithm2e}
+\usepackage{ listings }
+\usepackage{ xcolor }
+\usepackage{ floatrow }
+\usepackage{ graphicx }
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{caption}
+
+\title{CS251 Assignment1 Task3}
+\author{200050109-200050154}
+\date{August 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Solution}
+
+\subsection{Part 1}
+We plotted a histogram by simulating the final positions of $N:=10^4$ random walkers, each with step size of $10^-3$ and moving for $10^3$ timesteps
+\begin{center}
+\ffigbox [ 0.5 \textwidth ]{ \caption{Graph 1} } { \includegraphics [ width =0.5\textwidth ] {histogram.png}}  
+\end{center}
+\begin{center}
+\ffigbox [ 0.5 \textwidth ]{ \caption{Code 1} } { \includegraphics [ width =0.6\textwidth ] {code1.png}}  
+\end{center}
+
+\subsection{Part 2}
+\begin{center}
+\ffigbox [ 0.5 \textwidth ]{ \caption{Graph 2} } { \includegraphics [ width =0.5\textwidth ] {spacetime.png}}  
+\end{center}
+Plotted space time curves by logging motion of the walkers at each timestep
+
+\subsection{Part 3}
+Find attached documented code
+
+\subsection{Part 4}
+Empirical mean and variance obtained are
+\begin{align*}
+    \Hat{M} &= -3.912\times 10^{-4} \\
+    \Hat{V} &= 1\times10^{-3} \\
+\end{align*}
+
+\subsection{Part 5}
+The theoretical values of mean and variance should be
+\begin{align*}
+    M &= st(p-q) = 0 \\
+    V &= 4s^2tpq = 1\times10^{-3} \\
+\end{align*}
+where $s:=\text{step size}=10^{-3}$, $t:=\text{time steps}=10^{3}$, $p:=\text{probability of moving ahead}=0.5$ and $q:=\text{probability of moving backwards}=0.5$
+
+\subsection{Part 6}
+Observed errors
+\begin{align*}
+    \Hat{M}-M &= -3.912\times 10^{-4} \\
+    \Hat{V}-V &= 0
+\end{align*}
+
+\end{document}
