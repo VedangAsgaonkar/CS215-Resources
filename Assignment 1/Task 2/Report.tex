@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{esint}
+\usepackage{ fancyhdr }
+\usepackage{ enumitem }
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[linesnumbered , ruled , vlined]{algorithm2e}
+\usepackage{ listings }
+\usepackage{ xcolor }
+\usepackage{ floatrow }
+\usepackage{ graphicx }
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{caption}
+
+\title{CS215 Assignment1 Task2}
+\author{200050109-200050154}
+\date{August 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Solution}
+
+\subsection{Part 1}
+We used a loop to obtain $N:=10^6$ samples of $Z$ using a loop and making sure that the values lie in $\{0,1,\dots 25\}$. These values were stored as a frequency distribution indexed by the value of $Z$.
+\begin{center}
+\ffigbox [ 0.5 \textwidth ]{ \caption{Code 1} } { \includegraphics [ width =0.5\textwidth ] {code1.png}}  
+\end{center}
+
+
+\ffigbox [ 0.5 \textwidth ]{ \caption{values of Z} }{ \includegraphics [ width =1\textwidth,left ] {values11.png}} 
+\ffigbox [ 0.5 \textwidth ]{ \caption{values of Z } } { \includegraphics [ width =1\textwidth,left ] {values12.png}}  
+
+\subsection{Part 2}
+Define $\lambda = \lambda_x + \lambda_y$. Analytically, the PMF of $Z$ is given by
+\begin{equation*}
+    P(Z) = \frac{ \lambda^k e^{-\lambda} } {k!}
+\end{equation*}
+
+\subsection{Part 3}
+The values of $P(Z=k)$ and $P(\Hat{Z}=k)$ are very similar due to large value of $N$, and the graphs almost coincide.
+\begin{center}
+\ffigbox [ 0.5 \textwidth ]{ \caption{Graph 1} } { \includegraphics [ width =0.5\textwidth ] {empericalvstheoretical.png}}  
+\end{center}
+
+\subsection{Part 4}
+We took the value $n$ obtained from the Poisson distribution with $\lambda=4$. Then this value was used to obtain the value $k$, using binomial distribution.
+
+\begin{center}
+\ffigbox [ 0.5 \textwidth ]{ \caption{Code 2} } { \includegraphics [ width =0.5\textwidth ] {code2.png}}  
+\end{center}
+
+\ffigbox [ 0.5 \textwidth ]{ \caption{values of Z} }{ \includegraphics [ width =1\textwidth,left ] {values21.png}} 
+\ffigbox [ 0.5 \textwidth ]{ \caption{values of Z } } { \includegraphics [ width =1\textwidth,left ] {values22.png}}
+
+\subsection{Part 5}
+Theoretically, the value of the PMF obtained would be
+\begin{equation*}
+     P(Z) = \frac{(p\lambda)^k e^{-p\lambda} } {k!}
+\end{equation*}
+where $p:=0.8$ and $\lambda:=4$
+
+\subsection{Part 5}
+The values of $P(Z=k)$ and $P(\Hat{Z}=k)$ are very similar due to large value of $N$, and the graphs almost coincide.
+\begin{center}
+\ffigbox [ 0.5 \textwidth ]{ \caption{Graph 2} } { \includegraphics [ width =0.5\textwidth ] {thinning.png}}  
+\end{center}
+
+\end{document}
